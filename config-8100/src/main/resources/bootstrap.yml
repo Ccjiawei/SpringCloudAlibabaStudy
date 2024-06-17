@@ -15,3 +15,5 @@ spring:
         file-extension: yaml # 支持的配置文件类型，目前只有yaml和properties
         username: nacos # Nacos的登录用户名
         password: nacos # Nacos的登录密码
+
+
