@@ -1,0 +1,17 @@
+server:
+  port: 8100
+
+spring:
+  application:
+    name: config
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 42.193.112.54:8848
+      config:
+        server-addr: 42.193.112.54:8848
+#        namespace: dev
+#        group: DEV_GROUP
+        file-extension: yaml # 支持的配置文件类型，目前只有yaml和properties
+        username: nacos # Nacos的登录用户名
+        password: nacos # Nacos的登录密码

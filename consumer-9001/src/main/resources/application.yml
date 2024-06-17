@@ -1,6 +1,6 @@
 spring:
   application:
-    name: provider
+    name: consumer
   cloud:
     nacos:
       discovery:
@@ -15,7 +15,11 @@ spring:
 #        password: nacos # Nacos的登录密码
 
 server:
-  port: 8001
+  port: 9001
+
+# 消费者将要去访问的微服务名称（注册成功的Nacos的微服务提供者）
+service-url:
+  nacos-user-service: http://provider
 
 management:
   endpoint:

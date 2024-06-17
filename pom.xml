@@ -11,6 +11,9 @@
     <modules>
         <module>redis-study</module>
         <module>provider-8001</module>
+        <module>provider-8002</module>
+        <module>consumer-9001</module>
+        <module>config-8100</module>
     </modules>
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
