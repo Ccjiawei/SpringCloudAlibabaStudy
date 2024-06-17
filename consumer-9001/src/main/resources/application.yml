@@ -19,7 +19,8 @@ server:
 
 # 消费者将要去访问的微服务名称（注册成功的Nacos的微服务提供者）
 service-url:
-  nacos-user-service: http://provider
+  #nacos-user-service: http://provider
+  nacos-user-service: http://sentinel-provider
 
 management:
   endpoint:

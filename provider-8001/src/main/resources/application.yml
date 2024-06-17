@@ -4,7 +4,8 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 42.193.112.54:8848
+#        server-addr: 42.193.112.54:8848
+        server-addr: 42.193.112.54  #nginx
 #        server-addr: 127.0.0.1:8848
 
         #nacos 作为配置中心的一些配置项设置

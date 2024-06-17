@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: sentinel-provider
+  cloud:
+    nacos:
+      discovery:
+#        server-addr: 42.193.112.54:8848
+        server-addr: 42.193.112.54  #nginx
+#        server-addr: 127.0.0.1:8848
+
+        #nacos 作为配置中心的一些配置项设置
+#        namespace: dev #自定义的命名空间  默认为public
+#        group: DEV_GROUP # 自定义的组名  默认为DEFAULT_GROUP
+#        file-extension: yaml # 配置内容的数据格式
+#        username: nacos # Nacos的登录用户名
+#        password: nacos # Nacos的登录密码
+
+    #流控模块
+    sentinel:
+      transport:
+        # 配置Sentinel dashboard地址
+#        dashboard: 42.193.112.54:8080
+        dashboard: localhost:8080
+        # 默认8719端口，键入被占用会自动从8719+1，直到找到未被占用的端口
+        port: 8719
+      # 链路模式需要配置为false
+      web-context-unify: false
+
+      # sentinel持久化  默认sentinel流控规则配置是不保存的，每次服务重启都消失
+      datasource:
+        nacos:
+          nacos:
+            serverAddr: 42.193.112.54
+            groupId: DEFAULT_GROUP
+            dataId: sentinel-provider-dev.json #dataid格式还是nacos的格式
+            ruleType: flow
+  profiles:
+    active: dev
+
+server:
+  port: 8003
+
+management:
+  endpoint:
+    web:
+      exposure:
+        include: '*'
+feign:
+  sentinel:
+    enabled: true

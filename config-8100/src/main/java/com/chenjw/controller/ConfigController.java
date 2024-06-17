@@ -23,4 +23,5 @@ public class ConfigController {
         return "info : "+ info;
     }
 
+
 }
