@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: provider
+  cloud:
+    nacos:
+      discovery:
+#        server-addr: 42.193.112.54:8848
+        server-addr: 127.0.0.1:8848
+        namespace: public
+        group: DEFAULT_GROUP # 默认的组名
+        file-extension: yaml # 配置内容的数据格式
+        username: nacos # Nacos的登录用户名
+        password: nacos # Nacos的登录密码
+
+server:
+  port: 8001
+
+management:
+  endpoint:
+    web:
+      exposure:
+        include: '*'
