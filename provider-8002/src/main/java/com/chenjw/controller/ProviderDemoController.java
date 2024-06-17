@@ -25,4 +25,14 @@ public class ProviderDemoController {
         return "call success, applicationName = "+ applicationName +" port = " + port;
     }
 
+    /**
+     * 模拟openFeign调用超时
+     * @return
+     * @throws InterruptedException
+     */
+    @RequestMapping("/timeout")
+    public String timeout() throws InterruptedException {
+        Thread.sleep(5000);
+        return "timeout";
+    }
 }

@@ -1,5 +1,7 @@
 package com.chenjw.feignClient;
 
+import com.chenjw.common.Result;
+import com.chenjw.fallback.MyFallBack;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,9 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Date: 2024/6/17 17:46
  */
 @Component
-@FeignClient("provider")
+@FeignClient(value = "provider", fallback = MyFallBack.class)
 public interface DemoFeignClient {
 
     @RequestMapping("/provider/example")
-    public String demo();
+    Result demo();
+
+    @RequestMapping("/provider/timeout")
+    Result timeout();
 }

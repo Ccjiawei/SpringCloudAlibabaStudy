@@ -1,5 +1,6 @@
 package com.chenjw.controller;
 
+import com.chenjw.common.Result;
 import com.chenjw.feignClient.DemoFeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,8 +19,12 @@ public class DemoController {
     private DemoFeignClient demoFeignClient;
 
     @RequestMapping("feignTest")
-    public String feignTest(){
+    public Result feignTest(){
         return demoFeignClient.demo();
     }
 
+    @RequestMapping("feignTimeout")
+    public Result feignTimeout(){
+        return demoFeignClient.timeout();
+    }
 }
