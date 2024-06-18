@@ -60,4 +60,9 @@ public class ConsumerDemoController {
     public String demo8(){
         return restTemplate.getForObject(service_url + "/demo8", String.class);
     }
+
+    @RequestMapping("/demo9")
+    public String demo9(){
+        return "demo9";
+    }
 }

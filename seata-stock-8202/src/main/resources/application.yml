@@ -1,0 +1,41 @@
+server:
+  port: 8202
+
+spring:
+  application:
+    name: seata-stock
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 42.193.112.54
+      alibaba:
+        seata:
+          tx-service-group: default_tx_group
+  datasource:
+    url: jdbc:mysql://42.193.112.54:3306/seata_test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: jiawei@994102
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+seata:
+  tx-service-group: default_tx_group # 事务组名称，要和服务端对应
+  service:
+    vgroup-mapping:
+      default_tx_group: default # key是事务组名称 value要和服务端的机房名称保持一致
+
+management:
+  endpoint:
+    web:
+      exposure:
+        include:'*'
+
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml #指定映射文件路径
+  type-aliases-package: com.aruba.bean
+
+#mybatis-plus:
+#  type-aliases-package: com.chenjw.bean
+#  mapper-locations: classpath:mybatis/*.xml
+#  configuration:
+#    map-underscore-to-camel-case: true

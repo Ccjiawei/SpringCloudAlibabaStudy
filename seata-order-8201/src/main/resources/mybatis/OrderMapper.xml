@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--对应Java中Mapper的全类名-->
+<mapper namespace="com.chenjw.mapper.OrderMapper">
+    <insert id="addOrder">
+        insert into order_tbl (stock_id,order_info) values(#{stockId}, #{orderInfo});
+    </insert>
+</mapper>

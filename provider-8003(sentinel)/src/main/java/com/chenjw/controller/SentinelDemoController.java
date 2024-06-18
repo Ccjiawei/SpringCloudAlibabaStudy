@@ -2,8 +2,6 @@ package com.chenjw.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
-import com.chenjw.handler.MyBlockHandler;
-import com.chenjw.handler.MyFallBack;
 import com.chenjw.service.SentinelService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -49,24 +47,41 @@ public class SentinelDemoController {
     /************fallback**************/
 
     @RequestMapping("/demo5")
-    @SentinelResource(value = "demo5", fallback = "fallback",fallbackClass = MyFallBack.class)
+    @SentinelResource(value = "demo5", fallback = "fallback")
     public String demo5(Integer id){
         if (id == null)
             throw new NullPointerException("id不能为空");
         return "demo5";
     }
 
+    /**
+     * fallback demo5 的服务器异常回调
+     * @param id
+     * @param throwable
+     * @return
+     */
+    public String fallback(Integer id, Throwable throwable){
+        return "服务器异常 :" + throwable.getMessage();
+    }
 
 
     /************blockhandler**************/
 
     @RequestMapping("/demo6")
-    @SentinelResource(value = "demo6", blockHandler = "blockHandler",blockHandlerClass = MyBlockHandler.class)
+    @SentinelResource(value = "demo6", blockHandler = "blockHandler")
     public String demo6(Integer id){
         return "demo6";
     }
 
-
+    /**
+     * blockHandler demo6的流控异常回调
+     * @param id
+     * @param blockException
+     * @return
+     */
+    public String blockHandler(Integer id, BlockException blockException){
+        return "您被限制访问 :" + id;
+    }
 
     /************熔断规则**************/
 

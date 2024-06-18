@@ -1,0 +1,35 @@
+server:
+  port: 8050
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+#        server-addr: 42.193.112.54:8848
+        server-addr: 42.193.112.54  #nginx
+
+    gateway:
+      #自动配置路由和规则
+      discovery:
+        locator:
+          enabled: true #标识作为服务提供者注册到nacos中
+
+
+#      自动路由是根据服务名进行访问的，并自带负载均衡，但此时对外暴露服务名并不合适，
+#      想要在调用接口时去除服务名，并且带负载均衡效果，就需要进行手动配置路由规则，路由的uri使用lb协议
+      routes: # 路由规则，可配置多个
+        - id: provider # 定义一个id，一般与服务提供者的服务名相同
+          uri: lb://provider # 表示使用负载均衡协议，后面跟上服务名
+          predicates: # 断言，匹配路径用
+            - Path=/** # ant匹配符,表示所有目录下的所有路径
+        - id: consumer # 定义一个id，一般与服务提供者的服务名相同
+          uri: lb://consumer # 表示使用负载均衡协议，后面跟上服务名
+          predicates: # 断言，匹配路径用
+            - Path=/** # ant匹配符,表示所有目录下的所有路径
+#      #手动配置路由和规则
+#      routes: # 路由规则 可配置多个
+#        - id: provider # 定义一个id，一般与服务提供者的服务名相同
+#          uri: http://localhost:8001/provider
+#          predicates: # 断言，匹配路径用
+#            - Path=/** # ant匹配符,表示所有目录下的所有路径
