@@ -19,6 +19,7 @@
         <module>gateway-8050</module>
         <module>seata-order-8201</module>
         <module>seata-stock-8202</module>
+        <module>nba-team-8004</module>
     </modules>
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
