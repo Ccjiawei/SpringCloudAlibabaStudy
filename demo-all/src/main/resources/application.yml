@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: demo-all
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 42.193.112.54:8848
+    datasource:
+      url: jdbc:mysql://42.193.112.54:3306/activiti_test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: jiawei@994102
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+
+server:
+  port: 8005
+
