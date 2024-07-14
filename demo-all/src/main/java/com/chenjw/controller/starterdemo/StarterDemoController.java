@@ -14,6 +14,29 @@ public class StarterDemoController {
 
     @GetMapping("/starterdemo")
     public String starterDemo() {
+        System.out.println("after use="+exception());
         return myBean.hello();
     }
+
+    public int exception() {
+        int a = 1;
+        try {
+            a++;
+//            System.out.println("after try="+a);
+//            int b = 1/0;
+            return a;
+        }catch (Exception e){
+//            a++;
+//            System.out.println("after catch="+a);
+//            return a;
+        }finally {
+
+
+            a++;
+//            System.out.println("after finally="+a);
+            return a;
+        }
+
+    }
+
 }

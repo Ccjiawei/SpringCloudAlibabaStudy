@@ -1,6 +1,4 @@
 
-
-
 redis:
   host: 42.193.112.54
   cluster:

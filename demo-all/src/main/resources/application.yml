@@ -15,3 +15,7 @@ spring:
 server:
   port: 8005
 
+my:
+  app:
+    name: chenjwwwww
+    sex: maleeeeeee
