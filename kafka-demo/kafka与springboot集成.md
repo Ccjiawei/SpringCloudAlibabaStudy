@@ -9,8 +9,8 @@
 
 **安装完目录结构：**
 ![image-20240718235026558.png](image-20240718235026558.png)
+![img.png](img.png)
 ## 	服务器kafka相关的配置文件（config目录下）：
-
 - **zookeeper.properties** ： zookeeper配置
 
   重要属性配置：
