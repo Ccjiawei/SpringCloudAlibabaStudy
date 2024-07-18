@@ -1,0 +1,10 @@
+
+
+
+spring:
+  kafka:
+    bootstrap-servers: 42.193.112.54:9092
+    consumer:
+      auto-offset-reset: earliest
+server:
+  port: 9999

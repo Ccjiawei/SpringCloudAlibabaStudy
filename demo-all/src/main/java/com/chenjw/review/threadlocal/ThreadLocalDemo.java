@@ -20,5 +20,6 @@ public class ThreadLocalDemo implements Runnable {
         Thread thread2 = new Thread(demo2);
         thread2.start();
 
+
     }
 }

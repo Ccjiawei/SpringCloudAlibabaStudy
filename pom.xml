@@ -22,6 +22,7 @@
         <module>nba-team-8004</module>
         <module>demo-all</module>
         <module>demo-spring-boot-starter</module>
+        <module>kafka-demo</module>
     </modules>
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -37,6 +38,8 @@
         <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <lombok.version>1.18.4</lombok.version>
+        <kafka.version>2.6.13</kafka.version>
+        <kafka-clients.version>2.6.3</kafka-clients.version>
     </properties>
 
     <dependencyManagement>
@@ -56,6 +59,19 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>${kafka-clients.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${kafka.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
@@ -101,4 +117,11 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2</url>
+        </repository>
+    </repositories>
 </project>

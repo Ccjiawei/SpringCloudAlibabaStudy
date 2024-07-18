@@ -12,7 +12,7 @@ public class BubbleSort {
 
     public static int[] bubbleSort(int [] arrs){
 
-        for (int m = 0; m<arrs.length; m++){
+        for (int m = 0; m<arrs.length -1; m++){
             for (int n = 0; n<arrs.length - 1 - m; n++){
                 if (arrs[n] > arrs[n+1]) {
                     int temp = arrs[n];
