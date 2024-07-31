@@ -23,6 +23,7 @@
         <module>demo-all</module>
         <module>demo-spring-boot-starter</module>
         <module>kafka-demo</module>
+        <module>spring-security-demo</module>
     </modules>
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>

@@ -1,10 +1,10 @@
 spring:
   application:
     name: team
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 42.193.112.54
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 42.193.112.54
   datasource:
     url: jdbc:mysql://42.193.112.54:3306/nba?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root

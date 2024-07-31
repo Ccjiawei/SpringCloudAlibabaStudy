@@ -3,6 +3,7 @@ package com.chenjw.feign;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -17,5 +18,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface StockClient {
 
     @GetMapping("reduceStock")
-    String reduceStock(@RequestParam("id") Integer id);
+    String reduceStock(@RequestParam("id") Integer id, @RequestHeader("headerValue")String headerValue);
 }

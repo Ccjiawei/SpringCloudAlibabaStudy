@@ -1,0 +1,33 @@
+server:
+  port: 9099
+spring:
+  application:
+    name: spring-security-demo
+  security:
+    user:
+      name: admin
+      password: 123
+      roles: admin
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  mvc:
+    static-path-pattern: /static/images/**
+
+  datasource:
+    druid:
+      url: jdbc:mysql://42.193.112.54:3306/springsecurity?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: jiawei@994102
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+
+  mybatis:
+    mapper-locations: classpath:mapper/*.xml #指定映射文件路径
+    type-aliases-package: com.chenjw.entity
+
+  mybatis-plus:
+    type-aliases-package: com.chenjw.entity
+    mapper-locations: classpath:mapper/*.xml
+    configuration:
+      map-underscore-to-camel-case: true

@@ -72,5 +72,7 @@ class CatFactory{
 
         Make2Args<Cat> cat3 = (name, age) ->  new Cat(name, age);
         System.out.println(cat3.make("cat3", 3).name);
+
+
     }
 }

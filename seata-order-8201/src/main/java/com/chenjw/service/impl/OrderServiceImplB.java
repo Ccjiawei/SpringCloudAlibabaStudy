@@ -14,8 +14,8 @@ import javax.annotation.Resource;
  * @Author: Chenjiawei
  * @Date: 2024/6/18 16:41
  */
-@Service
-public class OrderServiceImpl implements OrderService {
+@Service("orderServiceB")
+public class OrderServiceImplB implements OrderService {
 
     @Resource
     private OrderMapper orderMapper;
@@ -25,7 +25,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     @GlobalTransactional// 开启分布式事务
     public void addOrder() {
-        System.out.println("==========OrderServiceImpl===========");
+        System.out.println("==========OrderServiceImplB===========");
         Order order = new Order(null, 1, "新增订单");
         orderMapper.insert(order);
 //        stockClient.reduceStock(1);
