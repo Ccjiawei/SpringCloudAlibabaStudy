@@ -24,6 +24,7 @@
         <module>demo-spring-boot-starter</module>
         <module>kafka-demo</module>
         <module>spring-security-demo</module>
+        <module>rabbitMQ-demo</module>
     </modules>
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -36,11 +37,12 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <spring-cloud-alibaba-version>2.2.7.RELEASE</spring-cloud-alibaba-version>
-        <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
+        <spring-cloud.version>2021.0.6</spring-cloud.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <lombok.version>1.18.4</lombok.version>
         <kafka.version>2.6.13</kafka.version>
         <kafka-clients.version>2.6.3</kafka-clients.version>
+        <amqp.version>2.3.7.RELEASE</amqp.version>
     </properties>
 
     <dependencyManagement>
@@ -83,6 +85,11 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-redis</artifactId>
             </dependency>-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-amqp</artifactId>
+                <version>${amqp.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
